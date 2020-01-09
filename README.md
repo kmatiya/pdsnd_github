@@ -11,6 +11,7 @@ Project provide statistical data for bike share systems for three major cities i
 bikeshare.py - Keep the python program
 chicago.csv - Data for Chicago
 new_york_city.csv - Data for New York
+washington.csv
 
 ### Credits
 It's important to give proper credit. Add links to any repo that inspired you or blogposts you consulted.
