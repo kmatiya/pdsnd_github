@@ -5,7 +5,7 @@
 Bikeshare Project
 
 ### Description
-Describe what your project is about and what it does
+Project provide statistical data for bike share systems for three major cities in the United States—Chicago, New York City, and Washington through the user providing the information.
 
 ### Files used
 Include the files used
