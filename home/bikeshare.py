@@ -157,6 +157,15 @@ def display_count_of_users(df):
 		print("  {}: {}".format(count_of_users.index[index], each_user_count))
 	print()
 	
+def display_count_gender(df):
+	"""Display count of gender"""
+	print("Counts of gender:\n")
+        count_of_gender = df['Gender'].value_counts()
+        for index,each_gender_count   in enumerate(count_of_gender):
+            print("  {}: {}".format(count_of_gender.index[index], each_gender_count))
+    
+        print()
+	
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -167,15 +176,10 @@ def user_stats(df):
     # Display counts of user types
 	display_count_of_users(df)
 
-    print()
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
-        print("Counts of gender:\n")
-        count_of_gender = df['Gender'].value_counts()
-        for index,each_gender_count   in enumerate(count_of_gender):
-            print("  {}: {}".format(count_of_gender.index[index], each_gender_count))
-    
-        print()
+		display_count_gender(df)
+		
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
         birth_year = df['Birth Year']
