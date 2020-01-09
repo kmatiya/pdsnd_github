@@ -8,9 +8,9 @@ Bikeshare Project
 Project provide statistical data for bike share systems for three major cities in the United States—Chicago, New York City, and Washington through the user providing the information.
 
 ### Files used
-bikeshare.py - Keep the python program
-chicago.csv - Data for Chicago
-new_york_city.csv - Data for New York
+bikeshare.py - Keep the python program  
+chicago.csv - Data for Chicago  
+new_york_city.csv - Data for New York  
 washington.csv
 
 ### Credits
