@@ -165,6 +165,18 @@ def display_count_gender(df):
             print("  {}: {}".format(count_of_gender.index[index], each_gender_count))
     
         print()
+
+def display_count_of_birth_year(df):
+	birth_year = df['Birth Year']
+        
+	most_common_year = birth_year.value_counts().idxmax()
+	print("The most common birth year:", most_common_year)
+
+	most_recent = birth_year.max()
+	print("The most recent birth year:", most_recent)
+
+	earliest_year = birth_year.min()
+	print("The most earliest birth year:", earliest_year)
 	
 def user_stats(df):
     """Displays statistics on bikeshare users."""
@@ -182,16 +194,7 @@ def user_stats(df):
 		
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
-        birth_year = df['Birth Year']
-        
-        most_common_year = birth_year.value_counts().idxmax()
-        print("The most common birth year:", most_common_year)
-
-        most_recent = birth_year.max()
-        print("The most recent birth year:", most_recent)
-
-        earliest_year = birth_year.min()
-        print("The most earliest birth year:", earliest_year)
+		display_count_of_birth_year(df)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
