@@ -149,7 +149,14 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
-
+def display_count_of_users(df):
+	"""Display count of users"""
+	print("Counts of user types:\n")
+    count_of_users = df['User Type'].value_counts()
+    for index, each_user_count in enumerate(count_of_users):
+		print("  {}: {}".format(count_of_users.index[index], each_user_count))
+	print()
+	
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -158,10 +165,7 @@ def user_stats(df):
 
     # TO DO: Display counts of user types
     # Display counts of user types
-    print("Counts of user types:\n")
-    count_of_users = df['User Type'].value_counts()
-    for index, each_user_count in enumerate(count_of_users):
-        print("  {}: {}".format(count_of_users.index[index], each_user_count))
+	display_count_of_users(df)
 
     print()
     # TO DO: Display counts of gender
