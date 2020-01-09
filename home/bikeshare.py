@@ -235,26 +235,30 @@ def display_raw_data(df):
 
 def main():
     while True:
-        # Asks user to specify a city, month, and day to analyze.
-        city, month, day = get_filters()
-        #Loads data for the specified city and filters by month and day if applicable.
-        df = load_data(city, month, day)
+		try:
+			# Asks user to specify a city, month, and day to analyze.
+			city, month, day = get_filters()
+			#Loads data for the specified city and filters by month and day if applicable.
+			df = load_data(city, month, day)
 
-        #Displays statistics on the most frequent times of travel.
-        time_stats(df)
-        #Displays statistics on the most popular stations and trip.
-        station_stats(df)
-        #Displays statistics on the total and average trip duration.
-        trip_duration_stats(df)
-        #Displays statistics on bikeshare users.
-        user_stats(df)
-        # Prompts user to get raw data
-        display_raw_data(df)
+			#Displays statistics on the most frequent times of travel.
+			time_stats(df)
+			#Displays statistics on the most popular stations and trip.
+			station_stats(df)
+			#Displays statistics on the total and average trip duration.
+			trip_duration_stats(df)
+			#Displays statistics on bikeshare users.
+			user_stats(df)
+			# Prompts user to get raw data
+			display_raw_data(df)
 
-        #Gets user input to run the program again or exit program
-        restart = load_user_option('Would you like to restart? Enter yes or no.') 
-        if restart.lower() == 'no':
-            break
+			#Gets user input to run the program again or exit program
+			restart = load_user_option('Would you like to restart? Enter yes or no.') 
+			if restart.lower() == 'no':
+				break
+		except:
+			print("An exception occurred")
+			break
         
 if __name__ == "__main__":
 	main()
