@@ -149,7 +149,35 @@ def trip_duration_stats(df):
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
 
+def display_count_of_users(df):
+	"""Display count of users"""
+	print("Counts of user types:\n")
+    count_of_users = df['User Type'].value_counts()
+    for index, each_user_count in enumerate(count_of_users):
+		print("  {}: {}".format(count_of_users.index[index], each_user_count))
+	print()
+	
+def display_count_gender(df):
+	"""Display count of gender"""
+	print("Counts of gender:\n")
+        count_of_gender = df['Gender'].value_counts()
+        for index,each_gender_count   in enumerate(count_of_gender):
+            print("  {}: {}".format(count_of_gender.index[index], each_gender_count))
+    
+        print()
 
+def display_count_of_birth_year(df):
+	birth_year = df['Birth Year']
+        
+	most_common_year = birth_year.value_counts().idxmax()
+	print("The most common birth year:", most_common_year)
+
+	most_recent = birth_year.max()
+	print("The most recent birth year:", most_recent)
+
+	earliest_year = birth_year.min()
+	print("The most earliest birth year:", earliest_year)
+	
 def user_stats(df):
     """Displays statistics on bikeshare users."""
 
@@ -158,32 +186,15 @@ def user_stats(df):
 
     # TO DO: Display counts of user types
     # Display counts of user types
-    print("Counts of user types:\n")
-    count_of_users = df['User Type'].value_counts()
-    for index, each_user_count in enumerate(count_of_users):
-        print("  {}: {}".format(count_of_users.index[index], each_user_count))
+	display_count_of_users(df)
 
-    print()
     # TO DO: Display counts of gender
     if 'Gender' in df.columns:
-        print("Counts of gender:\n")
-        count_of_gender = df['Gender'].value_counts()
-        for index,each_gender_count   in enumerate(count_of_gender):
-            print("  {}: {}".format(count_of_gender.index[index], each_gender_count))
-    
-        print()
+		display_count_gender(df)
+		
     # TO DO: Display earliest, most recent, and most common year of birth
     if 'Birth Year' in df.columns:
-        birth_year = df['Birth Year']
-        
-        most_common_year = birth_year.value_counts().idxmax()
-        print("The most common birth year:", most_common_year)
-
-        most_recent = birth_year.max()
-        print("The most recent birth year:", most_recent)
-
-        earliest_year = birth_year.min()
-        print("The most earliest birth year:", earliest_year)
+		display_count_of_birth_year(df)
 
     print("\nThis took %s seconds." % (time.time() - start_time))
     print('-'*40)
